@@ -33,7 +33,32 @@ namespace WpfApp
 				MessageBox.Show("Ejecutando una tarea en un metodo anónimo");
 			}
 			);
+			Task T3A = new Task(ShowMessage);
+			Task T3 = new Task( 
+					() => ShowMessage());
+
+			//Expresion lambda: 
+			//(parametros de entrada) => Expresión
+			//() => Expresion
+			//El operador lambda (=>) se lee como "va hacia"
+
+			Task T4 = new Task(() => MessageBox.Show("Ejecutando la tarea 4"));
+
+			Task T5 = new Task(() =>
+			{
+				DateTime CurrentDate = DateTime.Today;
+				DateTime StartDate = CurrentDate.AddDays(30);
+				MessageBox.Show($"Tarea 5. Fecha calculada: {StartDate}");
+
+			}
+			);
+
+			Task T6 = new Task ((message) =>
+			MessageBox.Show(message.ToString()), "Expresion Lambda con parametros.");
+
 		}
+
+
 		void ShowMessage()
 		{
 			MessageBox.Show("Ejecutando el metodo ShowMessage");
