@@ -30,7 +30,7 @@ namespace WpfApp
 			T = new Task(Code);
 			Task T2 = new Task(delegate
 			{
-				MessageBox.Show("Ejecutando una tarea en un metodo anónimo.");
+				MessageBox.Show("Ejecutando una tarea en un metodo anónimo");
 			}
 			);
 		}
